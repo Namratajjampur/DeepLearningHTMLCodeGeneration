@@ -16,7 +16,7 @@ Overall model
 </br>
 Visual model in CNN
 </br>
-![Screenshot](https://raw.githubusercontent.com/Namratajjampur/DeepLearningHTMLCodeGeneration/tree/master/images/cnn.PNG)
+![header image](https://raw.github.com/Namratajjampur/DeepLearningHTMLCodeGeneration/tree/master/images/cnn.PNG)
 </br>
 language model for encoder
 </br>
