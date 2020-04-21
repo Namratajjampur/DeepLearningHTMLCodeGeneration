@@ -38,9 +38,10 @@ Input Screenshot of webpage
 </br>
 Ouput HTML rendered by our model
 </br>
+<img src="https://github.com/Namratajjampur/DeepLearningHTMLCodeGeneration/tree/master/images/test_done.PNG"/>
 ![Screenshot](https://github.com/Namratajjampur/DeepLearningHTMLCodeGeneration/tree/master/images/test_done.PNG)
 
-##Contributors
+## Contributors
 Namrata R
 Pragnya Sridhar
 Sarang Ravindra
