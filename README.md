@@ -5,22 +5,40 @@ This project aims on cutting down development time of web UI design by generatin
 
 ## Dataset
 The dataset includes 1750 images(screenshots) and 1750 corresponding DSL(corresponding code). The training data involves 1500 images and DSLs and testing, 250 images and DSLs. The images in the dataset are of the dimension 2400 x 1380 pixels. The DSL has a vocabulary of a total 18 words.
+</br>
 https://github.com/tonybeltramelli/pix2code/tree/master/datasets
 
 ## Model Architecture
-
-![alt text](http://url/to/img.png)
-![alt text](http://url/to/img.png)
-![alt text](http://url/to/img.png)
-![alt text](http://url/to/img.png)
+</br>
+Overall model
+</br>
+![alt text](https://github.com/Namratajjampur/DeepLearningHTMLCodeGeneration/tree/master/images/overall.png)
+</br>
+Visual model in CNN
+</br>
+![alt text](https://github.com/Namratajjampur/DeepLearningHTMLCodeGeneration/tree/master/images/cnn.PNG)
+</br>
+language model for encoder
+</br>
+![alt text](https://github.com/Namratajjampur/DeepLearningHTMLCodeGeneration/tree/master/images/encoder.PNG)
+</br>
+Decoder 
+</br>
+![alt text](https://github.com/Namratajjampur/DeepLearningHTMLCodeGeneration/tree/master/images/decoder.PNG)
 
 ## Implementation
 
 ## Files in the Repository
 
 ## Results
-![alt text](http://url/to/img.png)
-![alt text](http://url/to/img.png)
+</br>
+Input Screenshot of webpage
+</br>
+![alt text](https://github.com/Namratajjampur/DeepLearningHTMLCodeGeneration/tree/master/images/try_done.PNG)
+</br>
+Ouput HTML rendered by our model
+</br>
+![alt text](https://github.com/Namratajjampur/DeepLearningHTMLCodeGeneration/tree/master/images/test_done.PNG)
 
 ##Contributors
 Namrata R
