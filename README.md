@@ -12,7 +12,7 @@ https://github.com/tonybeltramelli/pix2code/tree/master/datasets
 </br>
 Overall model
 </br>
-![Screenshot](https://github.com/Namratajjampur/DeepLearningHTMLCodeGeneration/tree/master/images/overall.png)
+![Screenshot](/images/overall.png)
 </br>
 Visual model in CNN
 </br>
