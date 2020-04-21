@@ -20,7 +20,7 @@ Visual model in CNN
 </br>
 language model for encoder
 </br>
-![Screenshot](https://github.com/Namratajjampur/DeepLearningHTMLCodeGeneration/tree/master/images/encoder.PNG)
+![Image description](https://github.com/Namratajjampur/DeepLearningHTMLCodeGeneration/tree/master/images/encoder.PNG)
 </br>
 Decoder 
 </br>
