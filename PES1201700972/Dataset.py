@@ -7,6 +7,7 @@ from keras.preprocessing.text import Tokenizer
 from keras.utils import to_categorical
 
 def resize_img(png_file_path):
+        #image processing with resizing image for feeding into visual model of CNN
         img_rgb = cv2.imread(png_file_path)
         img_grey = cv2.cvtColor(img_rgb, cv2.COLOR_BGR2GRAY)
         img_adapted = cv2.adaptiveThreshold(img_grey, 255, cv2.ADAPTIVE_THRESH_MEAN_C,cv2.THRESH_BINARY, 101, 9)
@@ -35,8 +36,10 @@ class Dataset():
         all_filenames.sort()
         for filename in (all_filenames):
             if filename[-3:] == "png":
+                #only image files are stored into dateset.image
                 self.image_filenames.append(filename)
             else:
+                #adding START and END TAG for caption training
                 text = '<START> ' + load_doc(self.data_dir+filename) + ' <END>'
                 text = ' '.join(text.split())
                 text = text.replace(',', ' ,')
@@ -60,10 +63,15 @@ class Dataset():
         
         X, y, image_data_filenames = list(), list(), list()
         for img_no, seq in enumerate(self.train_sequences):
+             #input_sequence prepends start sequence
+             #output_sequence appends end sequence
             in_seq, out_seq = seq[:-1], seq[1:]
+              #changing outsequence to one hot encoding 
             out_seq = to_categorical(out_seq, num_classes=self.vocab_size)
             image_data_filenames.append(self.image_filenames[img_no])
+                #dataset.X holds the insequence
             X.append(in_seq)
+                #dataset.Y holds the outsequence
             y.append(out_seq)
                 
         self.X = X
@@ -75,6 +83,7 @@ class Dataset():
             self.images.append(image)
 import functools 
 def pad(batch_y):
+        #adding padding to the sequences for keeping uniform sequence length across batches
     print(batch_y.shape)
     x=0
     for y in batch_y:
@@ -116,11 +125,13 @@ def pad2(batch_ex):
     return(np.array(ret))
 
 def word_for_id(integer, tokenizer):
+        #for each word, get its corresponding tokenized id
     for word, index in tokenizer.word_index.items():
         if index == integer:
             return word
     return None
 def load_val_images(data_dir):
+        #for testing images. do the image processing
     image_filenames =[]
     images = []
     all_filenames = listdir(data_dir)
