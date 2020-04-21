@@ -12,19 +12,19 @@ https://github.com/tonybeltramelli/pix2code/tree/master/datasets
 </br>
 Overall model
 </br>
-![alt text](https://github.com/Namratajjampur/DeepLearningHTMLCodeGeneration/tree/master/images/overall.png)
+![Screenshot](https://github.com/Namratajjampur/DeepLearningHTMLCodeGeneration/tree/master/images/overall.png)
 </br>
 Visual model in CNN
 </br>
-![alt text](https://github.com/Namratajjampur/DeepLearningHTMLCodeGeneration/tree/master/images/cnn.PNG)
+![Screenshot](https://github.com/Namratajjampur/DeepLearningHTMLCodeGeneration/tree/master/images/cnn.PNG)
 </br>
 language model for encoder
 </br>
-![alt text](https://github.com/Namratajjampur/DeepLearningHTMLCodeGeneration/tree/master/images/encoder.PNG)
+![Screenshot](https://github.com/Namratajjampur/DeepLearningHTMLCodeGeneration/tree/master/images/encoder.PNG)
 </br>
 Decoder 
 </br>
-![alt text](https://github.com/Namratajjampur/DeepLearningHTMLCodeGeneration/tree/master/images/decoder.PNG)
+![Screenshot](https://github.com/Namratajjampur/DeepLearningHTMLCodeGeneration/tree/master/images/decoder.PNG)
 
 ## Implementation
 
@@ -34,11 +34,11 @@ Decoder
 </br>
 Input Screenshot of webpage
 </br>
-![alt text](https://github.com/Namratajjampur/DeepLearningHTMLCodeGeneration/tree/master/images/try_done.PNG)
+![Screenshot](https://github.com/Namratajjampur/DeepLearningHTMLCodeGeneration/tree/master/images/try_done.PNG)
 </br>
 Ouput HTML rendered by our model
 </br>
-![alt text](https://github.com/Namratajjampur/DeepLearningHTMLCodeGeneration/tree/master/images/test_done.PNG)
+![Screenshot](https://github.com/Namratajjampur/DeepLearningHTMLCodeGeneration/tree/master/images/test_done.PNG)
 
 ##Contributors
 Namrata R
