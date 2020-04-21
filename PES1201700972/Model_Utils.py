@@ -5,6 +5,8 @@ from keras.layers import Embedding
 epsilon = 1e-3
 vb_size=18
 batchsize=2
+
+#weights and biases to be fed into the model
 weights = {
     'W_conv1': tf.get_variable('W0', shape=(3,3,3,32), initializer=tf.contrib.layers.xavier_initializer()), 
     'W_conv2': tf.get_variable('W1', shape=(3,3,32,32), initializer=tf.contrib.layers.xavier_initializer()), 
@@ -30,12 +32,13 @@ biases = {
     'Bout_gru2': tf.get_variable('B9', dtype = tf.float32,shape=(vb_size), initializer=tf.contrib.layers.xavier_initializer())
     }
 
+#adding a convolutional 2D layer
 def conv2d(x, w):
     return tf.nn.conv2d(x, w, strides=[1,1,1,1], padding='SAME')
-
+#maxpool layer
 def maxpool2d(x):
     return tf.nn.max_pool(x, ksize=[1,2,2,1], strides=[1,2,2,1], padding='SAME')
-
+#GRU class
 class GRU:
     def __init__(self, input_dimensions, hidden_size, inputs,dtype=tf.float32):
         self.input_dimensions = input_dimensions
@@ -87,7 +90,7 @@ class GRU:
         return h_t
 
 def batch_norm_wrapper(inputs, is_training, decay = 0.999):
-
+    # takes into account batchnormalization for testing vs training. for testing, since only one sample image maybe passed, takes population mean in that case
     scale = tf.Variable(tf.ones([inputs.get_shape()[-1]]))
     beta = tf.Variable(tf.zeros([inputs.get_shape()[-1]]))
     pop_mean = tf.Variable(tf.zeros([inputs.get_shape()[-1]]), trainable=False)
@@ -106,80 +109,51 @@ def batch_norm_wrapper(inputs, is_training, decay = 0.999):
 
 
 def cnn_test(x,weights,biases):
-
-    
-  
+    #considers without droputs
     x = tf.reshape(x, shape=[-1, 224, 224, 3])
    
     conv1 = tf.nn.relu(conv2d(x, weights['W_conv1'])+  biases['bc1'])
-    
     conv2 = tf.nn.relu(conv2d(conv1, weights['W_conv2']) + biases['bc2'])
-   
     conv2 = maxpool2d(conv2)
- 
-    conv3 = tf.nn.relu(conv2d(conv2, weights['W_conv3']) + biases['bc3'])
-
-    conv4 = tf.nn.relu(conv2d(conv3, weights['W_conv4']) + biases['bc4'])
-
     
+    conv3 = tf.nn.relu(conv2d(conv2, weights['W_conv3']) + biases['bc3'])
+    conv4 = tf.nn.relu(conv2d(conv3, weights['W_conv4']) + biases['bc4'])
     conv4 = maxpool2d(conv4)
-
     
     conv5 = tf.nn.relu(conv2d(conv4, weights['W_conv5']) + biases['bc5'])
-   
     conv6 = tf.nn.relu(conv2d(conv5, weights['W_conv6']) + biases['bc6'])
-    
-    
     conv6 = maxpool2d(conv6)
    
     fc1 = tf.reshape(conv6,[-1, weights['W_fc1'].get_shape().as_list()[0]])
     fc1 = tf.nn.relu(tf.matmul(fc1, weights['W_fc1'])+biases['b_fc1'])
-
     fc2 = tf.nn.relu(tf.matmul(fc1, weights['W_fc2'])+biases['b_fc2'])
-
+    # adding 2 fully connected layers
     
     return fc2
 
 
 
 def cnn_train(x,weights,biases):
-   
-    
-    
-  
+    # considers droput at every layer
     x = tf.reshape(x, shape=[-1, 224, 224, 3])
-   
     conv1 = tf.nn.relu(conv2d(x, weights['W_conv1'])+  biases['bc1'])
-   
     conv2 = tf.nn.relu(conv2d(conv1, weights['W_conv2']) + biases['bc2'])
-  
     conv2 = maxpool2d(conv2)
-
     conv2 = tf.nn.dropout(conv2, 0.25)
- 
     
     conv3 = tf.nn.relu(conv2d(conv2, weights['W_conv3']) + biases['bc3'])
-   
     conv4 = tf.nn.relu(conv2d(conv3, weights['W_conv4']) + biases['bc4'])
-
-    
     conv4 = maxpool2d(conv4)
-    
     conv4 = tf.nn.dropout(conv4, 0.25)
     
     conv5 = tf.nn.relu(conv2d(conv4, weights['W_conv5']) + biases['bc5'])
-    
     conv6 = tf.nn.relu(conv2d(conv5, weights['W_conv6']) + biases['bc6'])
-    
     conv6 = maxpool2d(conv6)
-   
     conv6 = tf.nn.dropout(conv6, 0.25)
 
     fc1 = tf.reshape(conv6,[-1, weights['W_fc1'].get_shape().as_list()[0]])
     fc1 = tf.nn.relu(tf.matmul(fc1, weights['W_fc1'])+biases['b_fc1'])
-   
     fc1 = tf.nn.dropout(fc1, 0.3)
-    
     fc2 = tf.nn.relu(tf.matmul(fc1, weights['W_fc2'])+biases['b_fc2'])
     fc2 = tf.nn.dropout(fc2, 0.3)  
 
