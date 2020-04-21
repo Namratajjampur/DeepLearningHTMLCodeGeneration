@@ -2,9 +2,9 @@ from Model_Utils import *
 from Dataset import *
 
 dir_name = 'try/'
-batch_size = 32
-my_dateset = Dataset(dir_name)
+test_dataset,train_dataset = test_train_split(dir_name)
 print("dataset done")
+
 x_train = np.array(my_dateset.images,dtype=np.float32)
 for i in range(len(x_train)):
     x_train[i]=np.array(x_train[i],dtype=np.float32)
