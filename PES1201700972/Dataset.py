@@ -28,18 +28,16 @@ def load_doc(filename):
     return text
 
 class Dataset():
-    def __init__(self, data_dir, input_transform=None, target_transform=None):
+    def __init__(self, data_dir,all_filenames, input_transform=None, target_transform=None):
         self.data_dir = data_dir
         self.image_filenames = []
         self.texts = []
-        all_filenames = listdir(data_dir)
+#         all_filenames = listdir(data_dir)
         all_filenames.sort()
         for filename in (all_filenames):
             if filename[-3:] == "png":
-                #only image files are stored into dateset.image
                 self.image_filenames.append(filename)
             else:
-                #adding START and END TAG for caption training
                 text = '<START> ' + load_doc(self.data_dir+filename) + ' <END>'
                 text = ' '.join(text.split())
                 text = text.replace(',', ' ,')
@@ -63,15 +61,10 @@ class Dataset():
         
         X, y, image_data_filenames = list(), list(), list()
         for img_no, seq in enumerate(self.train_sequences):
-             #input_sequence prepends start sequence
-             #output_sequence appends end sequence
             in_seq, out_seq = seq[:-1], seq[1:]
-              #changing outsequence to one hot encoding 
             out_seq = to_categorical(out_seq, num_classes=self.vocab_size)
             image_data_filenames.append(self.image_filenames[img_no])
-                #dataset.X holds the insequence
             X.append(in_seq)
-                #dataset.Y holds the outsequence
             y.append(out_seq)
                 
         self.X = X
@@ -81,24 +74,46 @@ class Dataset():
         for image_name in self.image_data_filenames:
             image = resize_img(self.data_dir+image_name)
             self.images.append(image)
-import functools 
-def pad(batch_y):
-        #adding padding to the sequences for keeping uniform sequence length across batches
-    print(batch_y.shape)
-    x=0
-    for y in batch_y:
-        if(len(y)>x):
-            x=len(y)
+            
+def test_train_split(data_dir,size):
+    all_filenames = listdir(data_dir)
 
+    imgs = []
+    dsls=[]
+    for filename in (all_filenames):
+        if filename[-3:] == "png":
+            imgs.append(filename)
+        else:
+            dsls.append(filename)
+
+    imgs=sorted(imgs)
+    dsls=sorted(dsls)
+
+    for i in range(len(dsls)):
+        if(dsls[i][:37]!=imgs[i][:37]):
+            print("^&",i)
+
+    test_indices = np.random.choice(len(imgs), size=size, replace=False)
+
+    train_data=[]
+    test_data=[]
+    for i in test_indices:
+        test_data.append(dsls[i])
+        test_data.append(imgs[i])
+
+    for i in range(len(test_data)):
+        all_filenames.remove(test_data[i])
+
+    train_data = all_filenames
+
+    return(test_data,train_data)
+
+def test_train_dataset(data_dir,size):
+    test,train = test_train_split(data_dir,size)
+    test_dataset = Dataset(data_dir,test)
+    train_dataset = Dataset(data_dir,train)
     
-    ret = []
-    for y in range(len(batch_y)):
-        res=np.zeros(x)
-        s = batch_y[y]
-        res[0:len(s)]=batch_y[y]
-
-        ret.append(res)
-    return np.array(ret)
+    return(test_dataset,train_dataset)
         
         
 
