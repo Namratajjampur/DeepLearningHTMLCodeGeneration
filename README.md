@@ -12,7 +12,7 @@ https://github.com/tonybeltramelli/pix2code/tree/master/datasets
 </br>
 Overall model
 </br>
-<img src="/images/overall.PNG"/>
+<img src="/images/overall.png"/>
 </br>
 Visual model in CNN
 </br>
