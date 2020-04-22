@@ -20,13 +20,13 @@ Overall model
   <td>language model for encoder</td>
  <tr>
  <tr>
-  <td rowspan=3><img src="/images/cnn.PNG" width="25%" height="25%"/></td>
-  <td><img src="/images/encoder.PNG" width="25%" height="25%"/></td>
+  <td rowspan=3><img src="/images/cnn.PNG" width="50%" height="50%"/></td>
+  <td><img src="/images/encoder.PNG" width="50%" height="50%"/></td>
   <tr>
    <td>Decoder</td>
   </tr>
   <tr>
-    <td><img src="/images/decoder.PNG" width="25%" height="25%"/></td>
+    <td><img src="/images/decoder.PNG" width="50%" height="50%"/></td>
   </tr>
  </tr>
 </table>
