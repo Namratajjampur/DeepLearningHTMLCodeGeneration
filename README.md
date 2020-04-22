@@ -16,18 +16,18 @@ Overall model
 </br>
 <table>
  <tr>
-  <td rowspan =2>Visual model in CNN</td>
+  <td>Visual model in CNN</td>
   <td>language model for encoder</td>
  <tr>
  <tr>
-  <td><img src="/images/cnn.PNG" width="25%" height="25%"/></td>
+  <td rowspan=2><img src="/images/cnn.PNG" width="25%" height="25%"/></td>
   <td><img src="/images/encoder.PNG" width="25%" height="25%"/></td>
   <tr>
    <td>Decoder</td>
- </tr>
- <tr>
-  <td><img src="/images/decoder.PNG" width="25%" height="25%"/></td>
- </tr>
+  </tr>
+  <tr>
+    <td><img src="/images/decoder.PNG" width="25%" height="25%"/></td>
+  </tr>
  </tr>
 </table>
 
