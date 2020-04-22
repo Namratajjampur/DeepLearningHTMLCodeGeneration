@@ -33,7 +33,23 @@ Overall model
 
 ## Implementation
 
-## Files in the Repository
+## Files and Folders in the Repository
+Outputs : trial version</br>
+all trials : notebooks for experimenting with each model of our code</br>
+images : images of model architecture</br>
+sampledata_predict : single image and gui for testing</br>
+Compiler.py - Convert DSL to HTML code</br>
+Dataset.py - Functions for modifying and preprocessing data</br>
+Embedding.ipynb - Word2Vec implemented in tensorflow</br>
+Integrated.ipynb: Entire code in a single notebook</br>
+LSTM_comparison.ipynb - Comparing performance of LSTM and GRU</br>
+Main.py - testing and prediction code</br>
+Model_Utils.py - tensor flow implementation of GRU and CNN</br>
+train.py - code for training</br>
+try.zip : subset of dataset</br>
+Presentaion.pptx : Formal presentation</br>
+Report.pdf: Formal IEEE formatted Report</br>
+vocabulary.vocab : 18 words used in our vocabulary</br>
 
 ## Results
 </br>
