@@ -12,19 +12,18 @@ https://github.com/tonybeltramelli/pix2code/tree/master/datasets
 </br>
 Overall model
 </br>
-![Screenshot](/images/overall.png)
+<img src="/images/overall.PNG"/>
 </br>
 Visual model in CNN
 </br>
-![header image](https://raw.github.com/Namratajjampur/DeepLearningHTMLCodeGeneration/tree/master/images/cnn.PNG)
+<img src="/images/cnn.PNG"/>
 </br>
 language model for encoder
 </br>
-![Image description](https://github.com/Namratajjampur/DeepLearningHTMLCodeGeneration/tree/master/images/encoder.PNG)
-</br>
+<img src="/images/encoder.PNG"/>
 Decoder 
 </br>
-![Screenshot](https://github.com/Namratajjampur/DeepLearningHTMLCodeGeneration/tree/master/images/decoder.PNG)
+<img src="/images/decoder.PNG"/>
 
 ## Implementation
 
@@ -34,14 +33,15 @@ Decoder
 </br>
 Input Screenshot of webpage
 </br>
-![Screenshot](https://github.com/Namratajjampur/DeepLearningHTMLCodeGeneration/tree/master/images/try_done.PNG)
+<img src="/images/try_done.PNG"/>
 </br>
 Ouput HTML rendered by our model
 </br>
 <img src="/images/test_done.PNG"/>
-![Screenshot](https://github.com/Namratajjampur/DeepLearningHTMLCodeGeneration/tree/master/images/test_done.PNG)
+
+
 
 ## Contributors
-Namrata R
-Pragnya Sridhar
+Namrata R</br>
+Pragnya Sridhar</br>
 Sarang Ravindra
