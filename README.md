@@ -12,18 +12,18 @@ https://github.com/tonybeltramelli/pix2code/tree/master/datasets
 </br>
 Overall model
 </br>
-<img src="/images/overall.png" width="50%" height="50%"/>
+<img src="/images/overall.png" width="25%" height="25%"/>
 </br>
 Visual model in CNN
 </br>
-<img src="/images/cnn.PNG"/>
+<img src="/images/cnn.PNG width="50%" height="50%""/>
 </br>
 language model for encoder
 </br>
-<img src="/images/encoder.PNG"/>
+<img src="/images/encoder.PNG width="50%" height="50%""/>
 Decoder 
 </br>
-<img src="/images/decoder.PNG"/>
+<img src="/images/decoder.PNG width="50%" height="50%""/>
 
 ## Implementation
 
