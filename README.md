@@ -32,6 +32,23 @@ Overall model
 </table>
 
 ## Implementation
+### Preprocessing the Dataset 
+The image is resized to 3x224x224 px image. Further the DSL is processed as 2 new components, namely the in-sequence and the out-sequence. The in-sequence consists of the caption prepended with a <START >and the out-sequence is the caption appended with the <END > tag.The is further tokenized and changed into its respective one hot encoding.
+ 
+### Encoder CNN
+The CNN employed to do feature engineering on given images and return a feature map to the language model to work on. Finally the output feature matrix is repeated ’N’ number of times where N represent the number of words in the caption sequence corresponding to that image. 
+
+### Encoder RNN 
+Encoder RNN has been implemented using a Gated Recurrent Unit(GRU). The DSL is ﬁrst fed into an embedding layer which is then fed into the two layers of GRU 
+
+### Decoder RNN 
+The outputs on Encoder CNN (feature vector) and Encoder RNN  are concatenated in the third dimension and fed as input to the Decoder RNN. The output of this decoder is ﬁnally the set of tokens which correspond to the DSL.
+
+### Predicting tokens for new images 
+For the ﬁnal testing, the new sample image is fed into the CNN and corresponding to this the <START >tag is given as input to the encoder RNN. These inputs produce text sequences till the <END >tag is encountered. Further the generated DSL is compared with original DSL and a BLEU score is calculated.
+ 
+### Running the Compiler
+The generated DSL is fed into the Compiler which compares each token to a JSON where each word in the vocabulary is mapped to its respective HTML format and produces a syntactically accurate HTML code
 
 ## Files and Folders in the Repository
 Outputs : trial version</br>
@@ -66,6 +83,6 @@ vocabulary.vocab : 18 words used in our vocabulary</br>
 
 
 ## Contributors
-Namrata R</br>
-Pragnya Sridhar</br>
-Sarang Ravindra
+#### Namrata R</br>
+#### Pragnya Sridhar</br>
+#### Sarang Ravindra
