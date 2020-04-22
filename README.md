@@ -16,14 +16,14 @@ Overall model
 </br>
 Visual model in CNN
 </br>
-<img src="/images/cnn.PNG width="50%" height="50%""/>
+<img src="/images/cnn.PNG" width="50%" height="50%"/>
 </br>
 language model for encoder
 </br>
-<img src="/images/encoder.PNG width="50%" height="50%""/>
+<img src="/images/encoder.PNG" width="50%" height="50%"/>
 Decoder 
 </br>
-<img src="/images/decoder.PNG width="50%" height="50%""/>
+<img src="/images/decoder.PNG" width="50%" height="50%"/>
 
 ## Implementation
 
@@ -31,12 +31,16 @@ Decoder
 
 ## Results
 </br>
+<row>
+ <col>
 Input Screenshot of webpage
+ </col>
+  <col>
+Output HTML rendered by our model
+ </col>
+</row>
 </br>
 <img src="/images/try_done.PNG"/>
-</br>
-Ouput HTML rendered by our model
-</br>
 <img src="/images/test_done.PNG"/>
 
 
