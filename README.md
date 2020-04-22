@@ -31,6 +31,7 @@ Decoder
 
 ## Results
 </br>
+<frame>
 <row>
  <col>
 Input Screenshot of webpage
@@ -39,6 +40,7 @@ Input Screenshot of webpage
 Output HTML rendered by our model
  </col>
 </row>
+<frame>
 </br>
 <img src="/images/try_done.PNG"/>
 <img src="/images/test_done.PNG"/>
