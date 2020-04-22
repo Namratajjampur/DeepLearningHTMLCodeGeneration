@@ -22,9 +22,8 @@ Overall model
  <tr>
   <td rowspan=3><img src="/images/cnn.PNG" width="75%" height="75%"/></td>
   <td><img src="/images/encoder.PNG" width="75%" height="75%"/></td>
-  <tr>
-   <td>Decoder</td>
-  </tr>
+  <td>Decoder</td>
+ </tr>
   <tr>
     <td><img src="/images/decoder.PNG" width="75%" height="75%"/></td>
   </tr>
