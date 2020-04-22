@@ -16,7 +16,7 @@ Overall model
 </br>
 <table>
  <tr>
-  <td>Visual model in CNN</td>
+  <td rowspan =2>Visual model in CNN</td>
   <td>language model for encoder</td>
  <tr>
  <tr>
