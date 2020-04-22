@@ -16,14 +16,14 @@ Overall model
 </br>
 Visual model in CNN
 </br>
-<img src="/images/cnn.PNG" width="50%" height="50%"/>
+<img src="/images/cnn.PNG" width="25%" height="25%"/>
 </br>
 language model for encoder
 </br>
-<img src="/images/encoder.PNG" width="50%" height="50%"/>
+<img src="/images/encoder.PNG" width="25%" height="25%"/>
 Decoder 
 </br>
-<img src="/images/decoder.PNG" width="50%" height="50%"/>
+<img src="/images/decoder.PNG" width="25%" height="25%"/>
 
 ## Implementation
 
