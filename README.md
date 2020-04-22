@@ -9,9 +9,9 @@ The dataset includes 1750 images(screenshots) and 1750 corresponding DSL(corresp
 https://github.com/tonybeltramelli/pix2code/tree/master/datasets
 
 ## Model Architecture
-</br>
-#### Overall model
-</br>
+
+Overall model
+
 <img src="/images/overall.png" width="50%" height="50%"/>
 </br>
 <table>
