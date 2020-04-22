@@ -10,9 +10,9 @@ https://github.com/tonybeltramelli/pix2code/tree/master/datasets
 
 ## Model Architecture
 </br>
-Overall model
+#### Overall model
 </br>
-<img src="/images/overall.png" width="25%" height="25%"/>
+<img src="/images/overall.png" width="50%" height="50%"/>
 </br>
 <table>
  <tr>
@@ -83,6 +83,6 @@ vocabulary.vocab : 18 words used in our vocabulary</br>
 
 
 ## Contributors
-#### Namrata R</br>
-#### Pragnya Sridhar</br>
+#### Namrata R
+#### Pragnya Sridhar
 #### Sarang Ravindra
