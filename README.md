@@ -31,20 +31,16 @@ Decoder
 
 ## Results
 </br>
-<frame>
-<row>
- <col>
-Input Screenshot of webpage
- </col>
-  <col>
-Output HTML rendered by our model
- </col>
-</row>
-</frame>
-</br>
-<img src="/images/try_done.PNG"/>
-<img src="/images/test_done.PNG"/>
-
+<table>
+ <tr>
+  <td>Input Screenshot of webpage</td>
+  <td>Output HTML rendered by our model</td>
+ </tr>
+ <tr>
+  <td><img src="/images/try_done.PNG"/></td>
+  <td><img src="/images/test_done.PNG"/></td>
+ </tr>
+ </table>
 
 
 ## Contributors
